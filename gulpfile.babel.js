@@ -5,6 +5,7 @@ import minifyCSS from "gulp-csso";
 import del from "del";
 import bro from "gulp-browserify";
 import babel from "babelify";
+import imagemin from "gulp-imagemin";
 
 sass.compiler = require("node-sass");
 
@@ -18,6 +19,11 @@ const paths = {
     src: "assets/js/main.js",
     dest: "src/static/js",
     watch: "assets/js/**/*.js"
+  },
+  images:{
+    src:"assets/images/**/*.png",
+    dest: "src/static/images",
+    watch: "assets/images/**/*.png"
   }
 };
 
@@ -50,14 +56,19 @@ const js = () =>
     )
     .pipe(gulp.dest(paths.js.dest));
 
+const images = () =>
+  gulp
+    .src(paths.images.src)
+    .pipe(imagemin())
+    .pipe(gulp.dest(paths.images.dest));
 
 const watchFiles = () => {
   gulp.watch(paths.styles.watch, styles);
   gulp.watch(paths.js.watch, js);
 };
 
-const dev = gulp.series(clean, styles, js, watchFiles);
+const dev = gulp.series(clean, styles, js, images, watchFiles);
 
-export const build = gulp.series(clean, styles, js);
+export const build = gulp.series(clean, styles, js, images);
 
 export default dev;
