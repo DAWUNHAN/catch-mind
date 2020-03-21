@@ -4,10 +4,16 @@ Real time catch mind game with Node, Gult and SocketIO
 
 ## Deployment
 
-Deloyed on Heroku <link href="https://fierce-escarpment-14808.herokuapp.com/"> Cilck here</link>
+- Deloyed on Heroku <a href="https://fierce-escarpment-14808.herokuapp.com/"> Cilck here</a>
 
-## TO DO
-- [x] Server
-- [x] Pug
-- [x] Static
-- [x] Socket IO
+## Technologies
+  - ES6
+  - Gulp
+  - Socket.io
+  - NodeJS
+
+## Functions
+- Realtime Chat
+- Drawing canvas
+- Notifications
+- Game score
