@@ -31,7 +31,6 @@
   },
   "scripts": {
     "dev:server": "nodemon --exec babel-node src/server --ignore assets/ --ignore src/static ",
-    "dev:assets": "gulp",
-    "build": "npm run dev:server && npm run dev:assets"
+    "dev:assets": "gulp"
   }
 }
