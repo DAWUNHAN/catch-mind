@@ -32,6 +32,7 @@
   "scripts": {
     "dev:server": "nodemon --exec babel-node src/server --ignore assets/ --ignore src/static ",
     "dev:assets": "gulp",
-    "start": "npm run dev:assets && npm run dev:server"
+    "pre-start": "npm run dev:assets",
+    "start": "npm run pre-start && npm run dev:server"
   }
 }
