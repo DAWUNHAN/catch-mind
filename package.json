@@ -33,6 +33,6 @@
     "dev:server": "nodemon --exec babel-node src/server --ignore assets/ --ignore src/static ",
     "dev:assets": "gulp",
     "pre-start": "npm run dev:assets",
-    "start": "npm run pre-start && npm run dev:server"
+    "start": "npm run dev:server"
   }
 }
