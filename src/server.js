@@ -18,7 +18,8 @@ app.get("/", (req, res) =>
 const handleListening = () =>
   console.log(`🌳 Server running: http://localhost:${PORT}`);
 
-const server = app.listen(PORT, handleListening);
+// const server = app.listen(PORT, handleListening);
+const server = app.listen(process.env.PORT || 4000, handleListening);
 
 const io = socketIO.listen(server);
 
